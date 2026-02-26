@@ -87,11 +87,7 @@
   "overrides": {
     "nth-check": ">=2.0.1",
     "postcss": ">=8.4.31",
-    "webpack-dev-server": ">=5.2.1",
-    "jsonpath": "npm:jsonpath-plus@>=10.0.0",
-    "rclone-api": {
-      "axios": "$axios"
-    }
+    "jsonpath": "npm:jsonpath-plus@>=10.0.0"
   },
   "jest": {
     "moduleNameMapper": {
