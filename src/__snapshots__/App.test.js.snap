@@ -5,21 +5,7 @@ exports[`App Component should match snapshot 1`] = `
   data-test="appComponent"
 >
   <ErrorBoundary>
-    <ToastContainer
-      autoClose={5000}
-      closeButton={[Function]}
-      closeOnClick={true}
-      draggable={true}
-      draggablePercent={80}
-      hideProgressBar={false}
-      newestOnTop={false}
-      pauseOnFocusLoss={true}
-      pauseOnHover={true}
-      position="top-right"
-      role="alert"
-      rtl={false}
-      transition={[Function]}
-    />
+    <bt />
     <HashRouter>
       <Suspense
         fallback={

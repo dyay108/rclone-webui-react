@@ -506,7 +506,7 @@ class NewDrive extends React.Component {
             // if (this.state.advancedOptions && !this.state.colAdvanced) {
             //     this.openAdvancedSettings();
             // }
-            toast.warn(`Check for errors before submitting.`, {
+            toast.warning(`Check for errors before submitting.`, {
                 autoClose: false
             });
         }

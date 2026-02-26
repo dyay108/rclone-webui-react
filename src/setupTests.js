@@ -1,7 +1,10 @@
-import {configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// Must use require() (not import) so execution order is preserved —
+// Babel hoists import statements above require() calls, but enzyme
+// must be loaded after globals are set.
+const { configure } = require('enzyme');
+const Adapter = require('@cfaester/enzyme-adapter-react-18').default;
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 const originalConsoleError = console.error;
 
@@ -35,4 +38,3 @@ if (global.document) {
         },
     });
 }
-
