@@ -1,15 +1,15 @@
+jest.mock('react-router-dom', () => ({
+    useNavigate: () => jest.fn(),
+}));
+
 import React from "react";
 import {shallow} from "enzyme";
-import {findByTestAttr, testStore} from "../../../../Utils";
+import {findByTestAttr} from "../../../../Utils";
 import toJson from "enzyme-to-json";
-import {TEST_REDUX_PROPS} from "../../../utils/testData";
 import ConfigRow from "./ConfigRow";
 
-const setUp = (intialState = {}, props = {}) => {
-    const store = testStore(intialState);
-    // Wrapped component is required to bypass the withRouter HOC and render only the component
-    const component = shallow(<ConfigRow.WrappedComponent {...props} store={store}/>);
-    return component;
+const setUp = (props = {}) => {
+    return shallow(<ConfigRow {...props}/>);
 };
 
 
@@ -20,9 +20,6 @@ describe('Config Row', function () {
     describe('renders', function () {
         let wrapper;
         beforeEach(() => {
-            const initialState = {
-                ...TEST_REDUX_PROPS
-            };
             const props = {
                 sequenceNumber: 1,
                 key: 1,
@@ -33,7 +30,7 @@ describe('Config Row', function () {
                 },
                 refreshHandle: refreshHandle
             };
-            wrapper = setUp(initialState, props)
+            wrapper = setUp(props)
         });
 
         it('should render without crashing', function () {

@@ -1,3 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Files View renders should match snapshot 1`] = `""`;
+exports[`Files View renders should match snapshot 1`] = `
+<div
+  className="row"
+>
+  <ErrorBoundary>
+    <Alert
+      color="info"
+      isOpen={false}
+      lg={12}
+      sm={12}
+      toggle={[Function]}
+    >
+      Downloading 
+      0
+       file(s). Please wait.
+    </Alert>
+    <Container
+      className="p-0"
+      fluid={true}
+    >
+      <ScrollableDiv
+        height="75vh"
+      >
+        <Table
+          className="table table-responsive-sm table-striped table-fix-head"
+        >
+          <thead>
+            <tr>
+              <th
+                className="pointer-cursor"
+                onClick={[Function]}
+              >
+                Name 
+                <i
+                  className="fa fa-lg fa-arrow-up"
+                />
+              </th>
+              <th
+                className="pointer-cursor"
+                onClick={[Function]}
+              >
+                Size 
+              </th>
+              <th
+                className="d-none d-md-table-cell pointer-cursor"
+                onClick={[Function]}
+              >
+                Modified 
+              </th>
+              <th>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th
+                colSpan={4}
+              >
+                Directories
+              </th>
+            </tr>
+            <FileComponent
+              canCopy={false}
+              canMove={true}
+              clickHandler={[Function]}
+              containerID="0"
+              deleteHandle={[Function]}
+              downloadHandle={[Function]}
+              isBucketBased={false}
+              item={
+                Object {
+                  "IsDir": true,
+                  "MimeType": "inode/directory",
+                  "ModTime": "2019-06-24T09:45:29.483620000+05:30",
+                  "Name": ".circleci",
+                  "Path": ".circleci",
+                  "Size": -1,
+                }
+              }
+              itemIdx={1}
+              key=".circleci"
+              linkShareHandle={[Function]}
+              loadImages={false}
+              remoteName="local"
+              remotePath=""
+            />
+            <tr>
+              <th
+                colSpan={4}
+              >
+                Files
+              </th>
+            </tr>
+            <FileComponent
+              canCopy={false}
+              canMove={true}
+              clickHandler={[Function]}
+              containerID="0"
+              deleteHandle={[Function]}
+              downloadHandle={[Function]}
+              isBucketBased={false}
+              item={
+                Object {
+                  "IsDir": false,
+                  "MimeType": "application/octet-stream",
+                  "ModTime": "2019-06-07T22:44:37.357539000+05:30",
+                  "Name": ".appveyor.yml",
+                  "Path": ".appveyor.yml",
+                  "Size": 1434,
+                }
+              }
+              itemIdx={1}
+              key=".appveyor.yml"
+              linkShareHandle={[Function]}
+              loadImages={false}
+              remoteName="local"
+              remotePath=""
+            />
+          </tbody>
+        </Table>
+      </ScrollableDiv>
+    </Container>
+    <LinkShareModal
+      closeModal={[Function]}
+      isVisible={false}
+      linkUrl=""
+    />
+  </ErrorBoundary>
+</div>
+`;

@@ -4,41 +4,19 @@ exports[`Mount Dashboard renders should match snapshot 1`] = `
 <div
   data-test="mountDashboardComponent"
 >
-  <Row
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
-  >
+  <Row>
     <Col
       className="mb-4 d-flex justify-content-between"
       lg={12}
-      tag="div"
-      widths={
-        Array [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ]
-      }
     >
       <NewMountModal
         buttonLabel="Create new mount"
         okHandle={[Function]}
       />
       <Button
-        className="float-right"
+        className="float-end"
         color="danger"
         onClick={[Function]}
-        tag="button"
       >
         Unmount all
       </Button>
@@ -47,8 +25,6 @@ exports[`Mount Dashboard renders should match snapshot 1`] = `
   <Table
     className="table-striped"
     responsive={true}
-    responsiveTag="div"
-    tag="table"
   >
     <thead>
       <tr>

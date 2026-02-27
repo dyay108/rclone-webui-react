@@ -5,48 +5,20 @@ exports[`Login Layout renders should match snapshot 1`] = `
   className="app flex-row align-items-center"
   data-test="loginComponent"
 >
-  <Container
-    tag="div"
-  >
+  <Container>
     <Row
       className="justify-content-center"
-      tag="div"
-      widths={
-        Array [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ]
-      }
     >
       <Col
         md="8"
-        tag="div"
-        widths={
-          Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ]
-        }
       >
-        <CardGroup
-          tag="div"
-        >
+        <CardGroup>
           <Card
             className="p-4"
-            tag="div"
           >
-            <CardBody
-              tag="div"
-            >
+            <CardBody>
               <Form
                 onSubmit={[Function]}
-                tag="form"
               >
                 <h1>
                   Login
@@ -58,20 +30,12 @@ exports[`Login Layout renders should match snapshot 1`] = `
                 </p>
                 <InputGroup
                   className="mb-3"
-                  tag="div"
                 >
-                  <InputGroupAddon
-                    addonType="prepend"
-                    tag="div"
-                  >
-                    <InputGroupText
-                      tag="span"
-                    >
-                      <i
-                        className="icon-user"
-                      />
-                    </InputGroupText>
-                  </InputGroupAddon>
+                  <InputGroupText>
+                    <i
+                      className="icon-user"
+                    />
+                  </InputGroupText>
                   <Input
                     autoComplete="ipAddress"
                     data-testid="LoginForm-ipAddress"
@@ -83,20 +47,12 @@ exports[`Login Layout renders should match snapshot 1`] = `
                 </InputGroup>
                 <InputGroup
                   className="mb-3"
-                  tag="div"
                 >
-                  <InputGroupAddon
-                    addonType="prepend"
-                    tag="div"
-                  >
-                    <InputGroupText
-                      tag="span"
-                    >
-                      <i
-                        className="icon-user"
-                      />
-                    </InputGroupText>
-                  </InputGroupAddon>
+                  <InputGroupText>
+                    <i
+                      className="icon-user"
+                    />
+                  </InputGroupText>
                   <Input
                     autoComplete="username"
                     data-testid="LoginForm-userName"
@@ -108,20 +64,12 @@ exports[`Login Layout renders should match snapshot 1`] = `
                 </InputGroup>
                 <InputGroup
                   className="mb-4"
-                  tag="div"
                 >
-                  <InputGroupAddon
-                    addonType="prepend"
-                    tag="div"
-                  >
-                    <InputGroupText
-                      tag="span"
-                    >
-                      <i
-                        className="icon-lock"
-                      />
-                    </InputGroupText>
-                  </InputGroupAddon>
+                  <InputGroupText>
+                    <i
+                      className="icon-lock"
+                    />
+                  </InputGroupText>
                   <Input
                     autoComplete="current-password"
                     data-testid="LoginForm-password"
@@ -131,36 +79,14 @@ exports[`Login Layout renders should match snapshot 1`] = `
                     value=""
                   />
                 </InputGroup>
-                <Row
-                  tag="div"
-                  widths={
-                    Array [
-                      "xs",
-                      "sm",
-                      "md",
-                      "lg",
-                      "xl",
-                    ]
-                  }
-                >
+                <Row>
                   <Col
-                    tag="div"
-                    widths={
-                      Array [
-                        "xs",
-                        "sm",
-                        "md",
-                        "lg",
-                        "xl",
-                      ]
-                    }
                     xs="6"
                   >
                     <Button
                       className="px-4"
                       color="primary"
                       data-testid="LoginForm-BtnLogin"
-                      tag="button"
                       type="submit"
                     >
                       Login
@@ -171,17 +97,15 @@ exports[`Login Layout renders should match snapshot 1`] = `
             </CardBody>
           </Card>
           <Card
-            className="text-white bg-white py-5 d-md-down-none"
+            className="text-white bg-white py-5 d-none d-md-block"
             style={
               Object {
                 "width": "44%",
               }
             }
-            tag="div"
           >
             <CardBody
               className="text-center"
-              tag="div"
             >
               <img
                 alt="RClone logo"

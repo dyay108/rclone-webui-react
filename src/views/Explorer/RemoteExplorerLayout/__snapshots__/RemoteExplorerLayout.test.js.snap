@@ -9,16 +9,6 @@ exports[`Remote Explorer Layout renders should match snapshot 1`] = `
     className="mb-3 d-none d-md-block"
     lg={12}
     sm={12}
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
   >
     <span
       className="text-choose-layout"
@@ -27,10 +17,9 @@ exports[`Remote Explorer Layout renders should match snapshot 1`] = `
         
     </span>
     <Button
-      className="ml-2 layout-change-button"
+      className="ms-2 layout-change-button"
       color="primary"
       onClick={[Function]}
-      tag="button"
     >
       <img
         alt="Single Vertical Pane"
@@ -43,10 +32,9 @@ exports[`Remote Explorer Layout renders should match snapshot 1`] = `
       />
     </Button>
     <Button
-      className="ml-2 layout-change-button"
+      className="ms-2 layout-change-button"
       color="primary"
       onClick={[Function]}
-      tag="button"
     >
       <img
         alt="Double Vertical Pane"
@@ -59,10 +47,9 @@ exports[`Remote Explorer Layout renders should match snapshot 1`] = `
       />
     </Button>
     <Button
-      className="ml-2 layout-change-button"
+      className="ms-2 layout-change-button"
       color="primary"
       onClick={[Function]}
-      tag="button"
     >
       <img
         alt="Triple Vertical Pane"
@@ -75,10 +62,9 @@ exports[`Remote Explorer Layout renders should match snapshot 1`] = `
       />
     </Button>
     <Button
-      className="ml-2"
+      className="ms-2"
       color="success"
       onClick={[Function]}
-      tag="button"
     >
       <i
         className="fa fa-arrows"

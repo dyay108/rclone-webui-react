@@ -53,8 +53,8 @@ class RemoteExplorerLayout extends React.Component {
 				<DndProvider backend={HTML5Backend}>
 					<Row className={"d-none d-md-block"} data-test="remoteExplorerLayout">
 
-						{distractionFreeMode && <div className="clearfix float-right">
-							<Button color={"success"} className={"ml-2"}
+						{distractionFreeMode && <div className="clearfix float-end">
+							<Button color={"success"} className={"ms-2"}
 									onClick={this.toggleDistractionFreeMode}><i className="fa fa-arrows"/></Button>
 						</div>}
 
@@ -66,20 +66,20 @@ class RemoteExplorerLayout extends React.Component {
                             Choose Layout: {"  "}
                         </span>
 
-							<Button color={"primary"} className={"ml-2 layout-change-button"}
+							<Button color={"primary"} className={"ms-2 layout-change-button"}
 									onClick={() => this.changeLayout(1, "horizontal")}>
 								<img style={{height: 24}} src={singlePaneImg} alt="Single Vertical Pane"/>
 							</Button>
-							<Button color={"primary"} className={"ml-2 layout-change-button"}
+							<Button color={"primary"} className={"ms-2 layout-change-button"}
 									onClick={() => this.changeLayout(2, "horizontal")}>
 								<img style={{height: 24}} src={doublePaneImg} alt="Double Vertical Pane"/>
 							</Button>
-							<Button color={"primary"} className={"ml-2 layout-change-button"}
+							<Button color={"primary"} className={"ms-2 layout-change-button"}
 									onClick={() => this.changeLayout(3, "horizontal")}>
 								<img style={{height: 24}} src={triplePaneImg} alt="Triple Vertical Pane"/>
 							</Button>
 
-							<Button color={"success"} className={"ml-2"}
+							<Button color={"success"} className={"ms-2"}
 									onClick={this.toggleDistractionFreeMode}><i className="fa fa-arrows"/> Full Screen
 							</Button>
 							{/*<Button onClick={this.changeLayout(4,"grid")}>4 - grid</Button>*/}

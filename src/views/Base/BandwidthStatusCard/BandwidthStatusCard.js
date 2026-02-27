@@ -99,7 +99,7 @@ class BandwidthStatusCard extends React.Component {
         return ( 
         <Card>
             <CardHeader>
-                Bandwidth <button className="btn btn-white float-right" onClick={this.toggleShowChangeBandwidth}>Modify</button>
+                Bandwidth <button className="btn btn-white float-end" onClick={this.toggleShowChangeBandwidth}>Modify</button>
             </CardHeader>
             <CardBody>
                 <p>
@@ -119,7 +119,7 @@ class BandwidthStatusCard extends React.Component {
 
                         </Col>
                     </FormGroup>
-                    <Button className="float-right" color="success" type="submit">Set</Button>
+                    <Button className="float-end" color="success" type="submit">Set</Button>
 
                 </Form>
                 

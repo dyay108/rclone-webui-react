@@ -4,31 +4,10 @@ exports[`Home Component renders should match snapshot 1`] = `
 <div
   data-test="homeComponent"
 >
-  <Row
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
-  >
+  <Row>
     <Col
       lg={6}
       sm={12}
-      tag="div"
-      widths={
-        Array [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ]
-      }
     >
       <Connect(BackendStatusCard)
         ipAddress={null}
@@ -38,16 +17,6 @@ exports[`Home Component renders should match snapshot 1`] = `
     <Col
       lg={6}
       sm={12}
-      tag="div"
-      widths={
-        Array [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ]
-      }
     >
       <Connect(BandwidthStatusCard) />
     </Col>

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Card, CardBody, Progress} from 'reactstrap';
 import classNames from 'classnames';
-import {mapToCssModules} from 'reactstrap/lib/utils';
 
 const propTypes = {
     header: PropTypes.string,
@@ -39,17 +38,17 @@ class BandwidthWidget extends Component {
             card.bgColor = 'bg-' + color;
         }
 
-        const classes = mapToCssModules(classNames(className, card.style, card.bgColor), cssModule);
+        const classes = classNames(className, card.style, card.bgColor);
         progress.style = classNames('progress-xs mt-3 mb-0', progress.style);
 
         return (
             <Card className={classes} {...attributes}>
                 <CardBody>
-                    <div className="h1 text-muted text-right mb-2">
+                    <div className="h1 text-muted text-end mb-2">
                         <i className={card.icon}></i>
                     </div>
                     <div className="h4 mb-0">{header}</div>
-                    <small className="text-muted text-uppercase font-weight-bold">{children}</small>
+                    <small className="text-muted text-uppercase fw-bold">{children}</small>
                     <Progress className={progress.style} color={progress.color} value={progress.value}/>
                 </CardBody>
             </Card>

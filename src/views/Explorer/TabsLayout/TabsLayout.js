@@ -14,13 +14,13 @@ function TabsLayout(props) {
                     const isActiveTab = ID === activeContainerIDInPane;
                     return (
                         <NavItem key={"TAB_" + ID}
-                                 className={"pl-0 pr-0 custom-tab " + (isActiveTab ? "tab-active" : "")}>
+                                 className={"ps-0 pe-0 custom-tab " + (isActiveTab ? "tab-active" : "")}>
                             <NavLink className={"float-center"} onClick={() => changeActiveRemoteContainer(ID, paneID)}>
-                                <i className="fa fa-folder-o pr-1"/>
+                                <i className="fa fa-folder-o pe-1"/>
                                 <span className="overflow-hidden">
 									{currentPaths[ID] && currentPaths[ID].remoteName !== "" ? currentPaths[ID].remoteName : "Open New"}
 								</span>
-                                <Button className="btn-no-background btn btn-secondary p-0 pl-1 pr-2 ml-2"
+                                <Button className="btn-no-background btn btn-secondary p-0 ps-1 pe-2 ms-2"
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             removeRemoteContainer(ID, paneID)
@@ -33,7 +33,7 @@ function TabsLayout(props) {
 				return null;
 			})
 		}
-		<NavItem key={"ADD_BUTTON"} className={"pl-0 pr-0"}>
+		<NavItem key={"ADD_BUTTON"} className={"ps-0 pe-0"}>
 			<NavLink className={"float-center"} onClick={() => addRemoteContainer(currentPaneID)}>
 				<i className="fa fa-lg fa-plus"/>
 			</NavLink>

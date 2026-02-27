@@ -4,6 +4,7 @@ import ConfigRow from "./ConfigRow";
 import {connect} from "react-redux";
 import {getConfigDump} from "../../../actions/configActions";
 import * as PropTypes from "prop-types";
+import {withRouter} from "../../../utils/withRouter";
 
 
 function RemoteRows({remotes, refreshHandle}) {
@@ -33,7 +34,7 @@ class ShowConfig extends React.PureComponent {
             <div data-test="showConfigComponent">
                 <Row>
                     <Col lg={8} className={"mb-4"}>
-                        <Button color={"primary"} className={"float-left"}
+                        <Button color={"primary"} className={"float-start"}
                                 onClick={() => this.props.history.push("/newdrive")}>
                             Create a New Config
                         </Button>
@@ -75,4 +76,4 @@ ShowConfig.propTypes = {
     error: PropTypes.object
 };
 
-export default connect(mapStateToProps, {getConfigDump})(ShowConfig);
+export default withRouter(connect(mapStateToProps, {getConfigDump})(ShowConfig));

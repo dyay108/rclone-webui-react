@@ -1,18 +1,18 @@
 import React, {Component, Suspense} from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import {withRouter} from '../../utils/withRouter';
 import {Container} from 'reactstrap';
 import {getVersion} from "../../actions/versionActions";
 
 import {
-    AppBreadcrumb,
-    AppFooter,
-    AppHeader,
-    AppSidebar,
-    AppSidebarFooter,
-    AppSidebarForm,
-    AppSidebarHeader,
-    AppSidebarMinimizer,
-    AppSidebarNav,
+    CBreadcrumb,
+    CFooter,
+    CHeader,
+    CSidebar,
+    CSidebarFooter,
+    CSidebarNav,
+    CSidebarNavItem,
+    CSidebarMinimizer,
 } from '@coreui/react';
 // sidebar nav config
 import navigation from '../../_nav';
@@ -27,26 +27,25 @@ const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 const VERSION_NAV_ITEM_ATTRS = {
-    attributes: { target: '_blank' },
-    class: 'mt-auto',
-    icon: 'cui-cog',
-    url: 'https://rclone.org/changelog',
-    variant: 'success'
+    className: 'mt-auto',
+    fontIcon: 'fa fa-cog',
+    to: 'https://rclone.org/changelog',
+    target: '_blank',
+    color: 'success'
 }
+
 class DefaultLayout extends Component {
 
     loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>;
 
-    get navConfig() {
-        return {
-            items: [
-                ...navigation.items,
-                {
-                    name: this.props.version.version,
-                    ...VERSION_NAV_ITEM_ATTRS
-                }
-            ]
-        }
+    get navItems() {
+        return [
+            ...navigation.items,
+            {
+                name: this.props.version.version,
+                ...VERSION_NAV_ITEM_ATTRS
+            }
+        ];
     }
 
     componentDidMount() {
@@ -58,57 +57,60 @@ class DefaultLayout extends Component {
     }
 
     render() {
-        // console.log("isConnected, default layout", this.props.isConnected);
         return (
-
-
             <div className="app" data-test="defaultLayout">
                 <ErrorBoundary>
-                    <AppHeader fixed>
+                    <CHeader fixed>
                         <Suspense fallback={this.loading()}>
                             <DefaultHeader onLogout={e => this.signOut(e)}/>
                         </Suspense>
-                    </AppHeader>
+                    </CHeader>
                     <div className="app-body">
-                        <AppSidebar fixed display="lg">
-                            <AppSidebarHeader/>
-                            <AppSidebarForm/>
-                            <Suspense fallback={this.loading()}>
-                                <AppSidebarNav navConfig={this.navConfig} />
-                            </Suspense>
-                            <AppSidebarFooter/>
-                            <AppSidebarMinimizer/>
-                        </AppSidebar>
+                        <CSidebar fixed breakpoint="lg">
+                            <CSidebarNav>
+                                <Suspense fallback={this.loading()}>
+                                    {this.navItems.map((item, idx) => (
+                                        <CSidebarNavItem
+                                            key={idx}
+                                            name={item.name}
+                                            to={item.to || item.url}
+                                            fontIcon={item.fontIcon || item.icon}
+                                            target={item.target}
+                                            className={item.className || item.class}
+                                            color={item.color}
+                                        />
+                                    ))}
+                                </Suspense>
+                            </CSidebarNav>
+                            <CSidebarFooter/>
+                            <CSidebarMinimizer/>
+                        </CSidebar>
                         <main className="main">
-                            <AppBreadcrumb appRoutes={routes}/>
+                            <CBreadcrumb appRoutes={routes}/>
                             <Container fluid>
                                 <Suspense fallback={this.loading()}>
-                                    <Switch>
+                                    <Routes>
                                         {
                                             routes.map((route, idx) => {
                                                 return route.component ? (
                                                     <Route
                                                         key={idx}
                                                         path={route.path}
-                                                        exact={route.exact}
-                                                        name={route.name}
-                                                        render={props => (
-                                                            <route.component {...props} />
-                                                        )}/>
+                                                        element={<route.component />}/>
                                                 ) : (null);
                                             })
                                         }
-                                        <Redirect from="/" to="/dashboard"/>
-                                    </Switch>
+                                        <Route path="/" element={<Navigate to="/dashboard" replace/>}/>
+                                    </Routes>
                                 </Suspense>
                             </Container>
                         </main>
                     </div>
-                    <AppFooter>
+                    <CFooter>
                         <Suspense fallback={this.loading()}>
                             <DefaultFooter/>
                         </Suspense>
-                    </AppFooter>
+                    </CFooter>
                 </ErrorBoundary>
             </div>
         );
@@ -120,4 +122,4 @@ const mapStateToProps = (state) => ({
     version: state.version,
 });
 
-export default connect(mapStateToProps, { getVersion })(DefaultLayout);
+export default withRouter(connect(mapStateToProps, { getVersion })(DefaultLayout));

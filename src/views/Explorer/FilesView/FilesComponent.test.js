@@ -1,3 +1,8 @@
+jest.mock('react-dnd', () => ({
+    useDrag: () => [{isDragging: false}, jest.fn()],
+    useDrop: () => [{isOver: false, canDrop: false}, jest.fn()],
+}));
+
 import React from "react";
 import {shallow} from "enzyme";
 import {testStore} from "../../../../Utils";

@@ -1,7 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Files Component renders should match snapshot 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ErrorBoundary>
+  <div
+    className="col-md-4"
+  >
+    <Card>
+      <CardBody
+        onClick={[Function]}
+      >
+        <FileIcon
+          IsDir={false}
+          MimeType="application/octet-stream"
+        />
+        .appveyor.yml
+      </CardBody>
+      <CardFooter>
+        <FileActions
+          deleteHandle={[MockFunction]}
+          downloadHandle={[MockFunction]}
+          item={
+            Object {
+              "IsDir": false,
+              "MimeType": "application/octet-stream",
+              "ModTime": "2019-06-07T22:44:37.357539000+05:30",
+              "Name": ".appveyor.yml",
+              "Path": ".appveyor.yml",
+              "Size": 1434,
+            }
+          }
+          linkShareHandle={[MockFunction]}
+        />
+      </CardFooter>
+    </Card>
+  </div>
+</ErrorBoundary>
 `;

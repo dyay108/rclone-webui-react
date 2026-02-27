@@ -9,7 +9,6 @@ exports[`Audio Player Widget renders should match snapshot 1`] = `
     <Button
       color="link"
       onClick={[Function]}
-      tag="button"
     >
       <audio
         controls={true}

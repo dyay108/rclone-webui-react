@@ -33,6 +33,7 @@ import {
 import {visibilityFilteringOptions} from "../../../utils/Constants";
 import {getAboutRemote} from "../../../actions/providerStatusActions";
 import {Doughnut} from "react-chartjs-2";
+import {Chart as ChartJS, ArcElement, Tooltip, Legend} from 'chart.js';
 import {bytesToGB, isEmpty} from "../../../utils/Tools";
 import {toast} from "react-toastify";
 import {PROP_FS_INFO} from "../../../utils/RclonePropTypes";
@@ -40,6 +41,8 @@ import newFolderImg from '../../../assets/img/new-folder.png';
 import {cleanTrashForRemote} from "rclone-api";
 import {createSelector} from "reselect";
 import FileUploadModal from "./FileUploadModal"; // with import
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function getUrl(currentPath) {
 	const {remoteName, remotePath} = currentPath;
@@ -203,24 +206,24 @@ class FileOperations extends React.Component {
 		const {remoteName} = currentPath;
 
 		return (
-			<div className="pl-0 mt-3 mb-1 d-flex justify-content-between align-items-center"
+			<div className="ps-0 mt-3 mb-1 d-flex justify-content-between align-items-center"
 				 style={{marginLeft: "-15px", marginRight: "-15px"}}>
 				<div className="d-flex flex-nowrap">
-					<Button color="light" className="mr-1 btn-explorer-action"
+					<Button color="light" className="me-1 btn-explorer-action"
 							onClick={() => navigateBack(containerID)}><i
 						className={"fa fa-lg fa-arrow-left"}/></Button>
-					<Button color="light" className={"mr-1 btn-explorer-action"}
+					<Button color="light" className={"me-1 btn-explorer-action"}
 							onClick={() => navigateFwd(containerID)}><i
 						className={"fa fa-lg fa-arrow-right"}/></Button>
-					<Button className="mr-1 btn-explorer-action" id="RefreshButton"
+					<Button className="me-1 btn-explorer-action" id="RefreshButton"
 							onClick={() => getFilesForContainerID(containerID)}><i
 						className={"fa fa-lg fa-repeat"}/></Button>
 					<UncontrolledTooltip placement="right" target="RefreshButton">
 						Refresh Files
 					</UncontrolledTooltip>
 				</div>
-				<div className="flex-grow-1 pl-1 pr-1 pr-lg-3 pl-lg-3">
-					<Form inline onSubmit={this.onSubmitUrlChange} className="h-100">
+				<div className="flex-grow-1 ps-1 pe-1 pr-lg-3 pl-lg-3">
+					<Form onSubmit={this.onSubmitUrlChange} className="h-100">
 						<Input style={{width: "100%"}} value={tempUrl} onChange={this.onChangeTrial}
 							   onFocus={this.onFocusHandle} onBlur={this.onBlurHandle}/>
 						<Button className={isUrlBarFocused ? "" : "d-none"} color="link" type={"submit"}
@@ -228,9 +231,9 @@ class FileOperations extends React.Component {
 					</Form>
 				</div>
 				<div className="d-flex flex-wrap">
-					{/*<Button className="p-0 float-right" color="link"><i className="fa fa-info-circle"/></Button>*/}
+					{/*<Button className="p-0 float-end" color="link"><i className="fa fa-info-circle"/></Button>*/}
 
-					<Button className="mr-1 btn-explorer-action p-1" id="CreateFolderButton"
+					<Button className="me-1 btn-explorer-action p-1" id="CreateFolderButton"
 							onClick={this.openNewFolderModal}><img src={newFolderImg} alt="New Folder"
 																   className="fa fa-lg"/> </Button>
 					<UncontrolledTooltip placement="bottom" target="CreateFolderButton">
@@ -271,13 +274,13 @@ class FileOperations extends React.Component {
 					</UncontrolledTooltip>
 					<FileUploadModal currentPath={currentPath} buttonLabel={"Upload"}
 									 buttonClass={"btn-explorer-action"}/>
-					<Form inline>
+					<Form>
 						<FormGroup>
 							{searchOpen && <Input type="text" placeholder="Search" value={searchQuery}
 												  className="animate-fade-in"
 												  onChange={this.changeSearch}/>
 							}
-							<Button color="" className="mr-1 btn-explorer-action"
+							<Button color="" className="me-1 btn-explorer-action"
 									onClick={this.handleSearchOpen}>
 								<i className={"fa fa-lg " + (searchOpen ? "fa-close" : "fa-search")}/>
 							</Button>

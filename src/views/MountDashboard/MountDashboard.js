@@ -46,7 +46,7 @@ class MountDashboard extends React.Component {
 				<Row>
 					<Col lg={12} className="mb-4 d-flex justify-content-between">
 						<NewMountModal buttonLabel="Create new mount" okHandle={this.handleCreateNewMount}/>
-						<Button className={"float-right"} color="danger" onClick={this.handleUnmountAll}>Unmount
+						<Button className={"float-end"} color="danger" onClick={this.handleUnmountAll}>Unmount
 							all</Button>
 					</Col>
 				</Row>

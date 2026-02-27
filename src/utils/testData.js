@@ -327,6 +327,12 @@ export const TEST_REDUX_PROPS = {
         },
         loadImages: {
             '0': false
+        },
+        sortFilters: {
+            '0': 'name'
+        },
+        sortFiltersAscending: {
+            '0': true
         }
     },
     providerStatus: {

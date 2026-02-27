@@ -139,7 +139,7 @@ const FileUploadModal = (props) => {
                                 </Row>
                                 }
                                 <Row>
-                                    <FormGroup row className="pl-2 pr-2 d-none">
+                                    <FormGroup row className="ps-2 pe-2 d-none">
                                         <Input id="upload-file" type="file" name="file" onChange={changeFilesHandler}
                                                multiple/>
                                     </FormGroup>

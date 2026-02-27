@@ -6,7 +6,8 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
   data-test="defaultLayout"
 >
   <ErrorBoundary>
-    <AppHeader
+    <CHeader
+      colorScheme="light"
       fixed={true}
       tag="header"
     >
@@ -23,97 +24,83 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
           onLogout={[Function]}
         />
       </Suspense>
-    </AppHeader>
+    </CHeader>
     <div
       className="app-body"
     >
-      <AppSidebar
-        compact={false}
-        display="lg"
+      <CSidebar
+        breakpoint="lg"
+        colorScheme="dark"
         fixed={true}
-        isOpen={false}
-        minimized={false}
-        offCanvas={false}
-        tag="div"
+        hideOnMobileClick={true}
+        show="responsive"
       >
-        <AppSidebarHeader
-          tag="div"
-        />
-        <AppSidebarForm
-          tag="div"
-        />
-        <Suspense
-          fallback={
-            <div
-              className="animated fadeIn pt-1 text-center"
-            >
-              Loading...
-            </div>
-          }
-        >
-          <AppSidebarNav
-            isOpen={false}
-            navConfig={
-              Object {
-                "items": Array [
-                  Object {
-                    "icon": "icon-speedometer",
-                    "name": "Dashboard",
-                    "url": "/dashboard",
-                  },
-                  Object {
-                    "icon": "icon-note",
-                    "name": "Configs",
-                    "url": "/showconfig",
-                  },
-                  Object {
-                    "icon": "icon-screen-desktop",
-                    "name": "Explorer",
-                    "url": "/remoteExplorer",
-                  },
-                  Object {
-                    "icon": "icon-star",
-                    "name": "Backend",
-                    "url": "/rcloneBackend",
-                  },
-                  Object {
-                    "icon": "fa fa-hdd-o",
-                    "name": "Mounts",
-                    "url": "/mountDashboard",
-                  },
-                  Object {
-                    "icon": "icon-logout",
-                    "name": "Log Out",
-                    "url": "/login",
-                  },
-                  Object {
-                    "attributes": Object {
-                      "target": "_blank",
-                    },
-                    "class": "mt-auto",
-                    "icon": "cui-cog",
-                    "name": "",
-                    "url": "https://rclone.org/changelog",
-                    "variant": "success",
-                  },
-                ],
-              }
+        <CSidebarNav>
+          <Suspense
+            fallback={
+              <div
+                className="animated fadeIn pt-1 text-center"
+              >
+                Loading...
+              </div>
             }
-            tag="nav"
-          />
-        </Suspense>
-        <AppSidebarFooter
+          >
+            <CSidebarNavItem
+              fontIcon="icon-speedometer"
+              key="0"
+              name="Dashboard"
+              to="/dashboard"
+            />
+            <CSidebarNavItem
+              fontIcon="icon-note"
+              key="1"
+              name="Configs"
+              to="/showconfig"
+            />
+            <CSidebarNavItem
+              fontIcon="icon-screen-desktop"
+              key="2"
+              name="Explorer"
+              to="/remoteExplorer"
+            />
+            <CSidebarNavItem
+              fontIcon="icon-star"
+              key="3"
+              name="Backend"
+              to="/rcloneBackend"
+            />
+            <CSidebarNavItem
+              fontIcon="fa fa-hdd-o"
+              key="4"
+              name="Mounts"
+              to="/mountDashboard"
+            />
+            <CSidebarNavItem
+              fontIcon="icon-logout"
+              key="5"
+              name="Log Out"
+              to="/login"
+            />
+            <CSidebarNavItem
+              className="mt-auto"
+              color="success"
+              fontIcon="fa fa-cog"
+              key="6"
+              name=""
+              target="_blank"
+              to="https://rclone.org/changelog"
+            />
+          </Suspense>
+        </CSidebarNav>
+        <CSidebarFooter
           tag="div"
         />
-        <AppSidebarMinimizer
-          tag="button"
-          type="button"
-        />
-      </AppSidebar>
+        <CSidebarMinimizer />
+      </CSidebar>
       <main
         className="main"
       >
-        <AppBreadcrumb
+        <CBreadcrumb
           appRoutes={
             Array [
               Object {
@@ -234,12 +221,9 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
               },
             ]
           }
-          className=""
-          tag="div"
         />
         <Container
           fluid={true}
-          tag="div"
         >
           <Suspense
             fallback={
@@ -250,74 +234,67 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
               </div>
             }
           >
-            <Switch>
+            <Routes>
               <Route
+                element={<UNDEFINED />}
                 key="1"
-                name="Edit Remote"
                 path="/newdrive/edit/:drivePrefix"
-                render={[Function]}
               />
               <Route
-                exact={true}
+                element={<UNDEFINED />}
                 key="2"
-                name="New Remote"
                 path="/newdrive"
-                render={[Function]}
               />
               <Route
-                exact={true}
+                element={<UNDEFINED />}
                 key="3"
-                name="Login Page"
                 path="/login"
-                render={[Function]}
               />
               <Route
+                element={<UNDEFINED />}
                 key="4"
-                name="Dashboard"
                 path="/dashboard"
-                render={[Function]}
               />
               <Route
+                element={<UNDEFINED />}
                 key="5"
-                name="Configs"
                 path="/showconfig"
-                render={[Function]}
               />
               <Route
-                exact={true}
+                element={<UNDEFINED />}
                 key="6"
-                name="Explorer"
                 path="/remoteExplorer/:remoteName/:remotePath"
-                render={[Function]}
               />
               <Route
+                element={<UNDEFINED />}
                 key="7"
-                name="Explorer"
                 path="/remoteExplorer"
-                render={[Function]}
               />
               <Route
+                element={<UNDEFINED />}
                 key="8"
-                name="Rclone Backend"
                 path="/rcloneBackend"
-                render={[Function]}
               />
               <Route
+                element={<UNDEFINED />}
                 key="9"
-                name="Mount Dashboard"
                 path="/mountDashboard"
-                render={[Function]}
               />
-              <Redirect
-                from="/"
-                to="/dashboard"
+              <Route
+                element={
+                  <Navigate
+                    replace={true}
+                    to="/dashboard"
+                  />
+                }
+                path="/"
               />
-            </Switch>
+            </Routes>
           </Suspense>
         </Container>
       </main>
     </div>
-    <AppFooter
+    <CFooter
       fixed={false}
       tag="footer"
     >
@@ -332,7 +309,7 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
       >
         <lazy />
       </Suspense>
-    </AppFooter>
+    </CFooter>
   </ErrorBoundary>
 </div>
 `;

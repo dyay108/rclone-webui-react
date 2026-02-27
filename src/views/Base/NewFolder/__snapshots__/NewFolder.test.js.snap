@@ -33,54 +33,26 @@ exports[`New Folder renders should match snapshot 1`] = `
 >
   <Form
     onSubmit={[Function]}
-    tag="form"
   >
     <ModalHeader
-      charCode={215}
-      closeAriaLabel="Close"
-      tag="h5"
       toggle={[Function]}
-      wrapTag="div"
     >
       Create New folder at 
       mydrive
       : 
     </ModalHeader>
-    <ModalBody
-      tag="div"
-    >
+    <ModalBody>
       <FormGroup
         row={true}
-        tag="div"
       >
         <Label
           for="folderName"
           sm={5}
-          tag="label"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
         >
           Enter the name
         </Label>
         <Col
           sm={7}
-          tag="div"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
         >
           <Input
             autoFocus={true}
@@ -97,10 +69,9 @@ exports[`New Folder renders should match snapshot 1`] = `
         className="clearfix"
       >
         <Button
-          className="float-right"
+          className="float-end"
           color="success"
           disabled={false}
-          tag="button"
           type="submit"
         >
           <i

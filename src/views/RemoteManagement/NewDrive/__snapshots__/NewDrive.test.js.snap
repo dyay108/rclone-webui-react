@@ -15,6 +15,7 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
       appear={false}
       enter={true}
       exit={true}
+      horizontal={false}
       in={false}
       isOpen={true}
       mountOnEnter={false}
@@ -28,12 +29,8 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
       timeout={350}
       unmountOnExit={false}
     >
-      <Card
-        tag="div"
-      >
-        <CardBody
-          tag="div"
-        >
+      <Card>
+        <CardBody>
           <CustomInput
             changeHandler={[Function]}
             id="driveName"
@@ -45,36 +42,15 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
           />
           <FormGroup
             row={true}
-            tag="div"
           >
             <Label
               for="driveType"
               sm={5}
-              tag="label"
-              widths={
-                Array [
-                  "xs",
-                  "sm",
-                  "md",
-                  "lg",
-                  "xl",
-                ]
-              }
             >
               Select
             </Label>
             <Col
               sm={7}
-              tag="div"
-              widths={
-                Array [
-                  "xs",
-                  "sm",
-                  "md",
-                  "lg",
-                  "xl",
-                ]
-              }
             >
               <ProviderAutoSuggest
                 onChange={[Function]}
@@ -301,33 +277,12 @@ The minimum value is 1 second. The maximum value is one week.",
           </FormGroup>
           <FormGroup
             row={true}
-            tag="div"
           >
             <Col
               sm={3}
-              tag="div"
-              widths={
-                Array [
-                  "xs",
-                  "sm",
-                  "md",
-                  "lg",
-                  "xl",
-                ]
-              }
             >
               <Label
                 for="inputDriveName"
-                tag="label"
-                widths={
-                  Array [
-                    "xs",
-                    "sm",
-                    "md",
-                    "lg",
-                    "xl",
-                  ]
-                }
               >
                 Docs are available at 
               </Label>
@@ -343,13 +298,11 @@ The minimum value is 1 second. The maximum value is one week.",
             className="clearfix"
           >
             <div
-              className="float-right"
+              className="float-end"
             >
               <Button
-                className="ml-3 btn-blue"
-                color="secondary"
+                className="ms-3 btn-blue"
                 onClick={[Function]}
-                tag="button"
               >
                 Next
               </Button>
@@ -362,6 +315,7 @@ The minimum value is 1 second. The maximum value is one week.",
       appear={false}
       enter={true}
       exit={true}
+      horizontal={false}
       in={false}
       isOpen={false}
       mountOnEnter={false}
@@ -375,12 +329,8 @@ The minimum value is 1 second. The maximum value is one week.",
       timeout={350}
       unmountOnExit={false}
     >
-      <Card
-        tag="div"
-      >
-        <CardBody
-          tag="div"
-        >
+      <Card>
+        <CardBody>
           <DriveParameters
             changeHandler={[Function]}
             config={
@@ -614,7 +564,7 @@ The minimum value is 1 second. The maximum value is one week.",
             className="clearfix"
           >
             <div
-              className="float-right"
+              className="float-end"
             >
               <Input
                 onChange={[Function]}
@@ -622,23 +572,19 @@ The minimum value is 1 second. The maximum value is one week.",
                 value={false}
               />
               <span
-                className="mr-3"
+                className="me-3"
               >
                 Edit Advanced Options
               </span>
               <Button
                 className="btn-no-background"
-                color="secondary"
                 onClick={[Function]}
-                tag="button"
               >
                 Go back
               </Button>
               <Button
-                className="ml-3 btn-blue"
-                color="secondary"
+                className="ms-3 btn-blue"
                 onClick={[Function]}
-                tag="button"
               >
                 Next
               </Button>
@@ -651,6 +597,7 @@ The minimum value is 1 second. The maximum value is one week.",
       appear={false}
       enter={true}
       exit={true}
+      horizontal={false}
       in={false}
       isOpen={false}
       mountOnEnter={false}
@@ -664,12 +611,8 @@ The minimum value is 1 second. The maximum value is one week.",
       timeout={350}
       unmountOnExit={false}
     >
-      <Card
-        tag="div"
-      >
-        <CardBody
-          tag="div"
-        >
+      <Card>
+        <CardBody>
           <DriveParameters
             changeHandler={[Function]}
             config={
@@ -903,7 +846,7 @@ The minimum value is 1 second. The maximum value is one week.",
             className="clearfix"
           >
             <div
-              className="float-right"
+              className="float-end"
             >
               <Input
                 onChange={[Function]}
@@ -911,23 +854,19 @@ The minimum value is 1 second. The maximum value is one week.",
                 value={false}
               />
               <span
-                className="mr-3"
+                className="me-3"
               >
                 Edit Advanced Options
               </span>
               <Button
                 className="btn-no-background"
-                color="secondary"
                 onClick={[Function]}
-                tag="button"
               >
                 Go back
               </Button>
               <Button
-                className="ml-3 btn-blue"
-                color="secondary"
+                className="ms-3 btn-blue"
                 onClick={[Function]}
-                tag="button"
               >
                 Next
               </Button>

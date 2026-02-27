@@ -7,7 +7,6 @@ exports[`New Mount Modal renders should match snapshot 1`] = `
   <Button
     color="primary"
     onClick={[Function]}
-    tag="button"
   />
   <Modal
     autoFocus={true}
@@ -39,83 +38,33 @@ exports[`New Mount Modal renders should match snapshot 1`] = `
     zIndex={1050}
   >
     <ModalHeader
-      charCode={215}
-      closeAriaLabel="Close"
-      tag="h5"
       toggle={[Function]}
-      wrapTag="div"
     >
       New Mount
     </ModalHeader>
-    <ModalBody
-      tag="div"
-    >
+    <ModalBody>
       <FormGroup
         row={true}
-        tag="div"
       >
         <Label
           for="mountFs"
           sm={5}
-          tag="label"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
         >
           Fs
         </Label>
         <Col
           sm={7}
-          tag="div"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
         >
           <Connect(RemotesList)
             handleChangeRemoteName={[Function]}
             remoteName=""
           />
-          <FormFeedback
-            tag="div"
-          />
+          <FormFeedback />
         </Col>
       </FormGroup>
-      <Row
-        tag="div"
-        widths={
-          Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ]
-        }
-      >
+      <Row>
         <Col
           lg={6}
-          tag="div"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
         >
           <p>
             Mount Options
@@ -296,16 +245,6 @@ exports[`New Mount Modal renders should match snapshot 1`] = `
         </Col>
         <Col
           lg={6}
-          tag="div"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
         >
           <p>
             VFS Options
@@ -533,15 +472,12 @@ exports[`New Mount Modal renders should match snapshot 1`] = `
         </Col>
       </Row>
     </ModalBody>
-    <ModalFooter
-      tag="div"
-    >
+    <ModalFooter>
       <Button
         color="primary"
         data-test="ok-button"
         disabled={true}
         onClick={[Function]}
-        tag="button"
       >
         Create
       </Button>
@@ -550,7 +486,6 @@ exports[`New Mount Modal renders should match snapshot 1`] = `
         color="secondary"
         data-test="cancel-button"
         onClick={[Function]}
-        tag="button"
       >
         Cancel
       </Button>

@@ -112,7 +112,7 @@ class NewFolder extends React.Component {
                             </Col>
                         </FormGroup>
                         <div className="clearfix">
-                            <Button type="submit" color="success" className="float-right" disabled={disableForm}><i
+                            <Button type="submit" color="success" className="float-end" disabled={disableForm}><i
                                 className="fa fa-check fa-lg"/>Create folder</Button>
                         </div>
                         {/*<Input type={"text"} value={name} onChange={this.changeName}*/}

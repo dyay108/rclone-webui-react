@@ -4,41 +4,10 @@ exports[`Tabbed Panes renders should match snapshot 1`] = `
 <Col
   key="0"
   lg={12}
-  tag="div"
-  widths={
-    Array [
-      "xs",
-      "sm",
-      "md",
-      "lg",
-      "xl",
-    ]
-  }
 >
-  <Row
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
-  >
+  <Row>
     <Col
       lg={12}
-      tag="div"
-      widths={
-        Array [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ]
-      }
     >
       <Connect(TabsLayout)
         paneID={0}

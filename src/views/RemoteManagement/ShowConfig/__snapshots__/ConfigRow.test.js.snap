@@ -17,18 +17,14 @@ exports[`Config Row renders should match snapshot 1`] = `
   </td>
   <td>
     <Button
-      className="bg-info mr-2"
-      color="secondary"
+      className="bg-info me-2"
       onClick={[Function]}
-      tag="button"
     >
       Update
     </Button>
     <Button
       className="bg-danger"
-      color="secondary"
       onClick={[Function]}
-      tag="button"
     >
       Delete
     </Button>

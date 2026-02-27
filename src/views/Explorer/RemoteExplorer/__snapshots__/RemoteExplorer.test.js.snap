@@ -2,20 +2,15 @@
 
 exports[`Remote Explorer renders should match snapshot 1`] = `
 <ErrorBoundary>
-  <Card
-    tag="div"
-  >
-    <CardBody
-      tag="div"
-    >
+  <Card>
+    <CardBody>
       <Container
         fluid={true}
-        tag="div"
       >
         <Connect(FileOperations)
           containerID="0"
         />
-        <Connect(DropTarget(FilesView))
+        <Connect(FilesView)
           containerID="0"
         />
       </Container>

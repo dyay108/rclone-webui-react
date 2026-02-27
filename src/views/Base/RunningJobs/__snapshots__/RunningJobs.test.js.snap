@@ -1,31 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Running Jobs renders should match snapshot 1`] = `
-<Row
-  tag="div"
-  widths={
-    Array [
-      "xs",
-      "sm",
-      "md",
-      "lg",
-      "xl",
-    ]
-  }
->
+<Row>
   <Col
     lg={6}
     sm={12}
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
   >
     <GlobalStatus
       stats={
@@ -38,55 +17,31 @@ exports[`Running Jobs renders should match snapshot 1`] = `
   <Col
     lg={6}
     sm={12}
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
   >
-    <Card
-      tag="div"
-    >
-      <CardHeader
-        tag="div"
-      >
+    <Card>
+      <CardHeader>
         Speed
       </CardHeader>
-      <CardBody
-        tag="div"
-      >
+      <CardBody>
         <div
           className="chart-wrapper"
         >
-          <Line
+          <ForwardRef
             data={Object {}}
             options={
               Object {
                 "maintainAspectRatio": false,
                 "scales": Object {
-                  "xAxes": Array [
-                    Object {
-                      "ticks": Object {
-                        "display": false,
-                      },
+                  "x": Object {
+                    "ticks": Object {
+                      "display": false,
                     },
-                  ],
-                  "yAxes": Array [
-                    Object {
-                      "ticks": Object {
-                        "beginAtZero": true,
-                      },
+                  },
+                  "y": Object {
+                    "ticks": Object {
+                      "beginAtZero": true,
                     },
-                  ],
-                },
-                "tooltips": Object {
-                  "custom": [Function],
-                  "enabled": false,
+                  },
                 },
               }
             }
@@ -98,16 +53,6 @@ exports[`Running Jobs renders should match snapshot 1`] = `
   <Col
     lg={4}
     sm={12}
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
   >
     <TransferringJobs
       transferring={Object {}}

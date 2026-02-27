@@ -1,16 +1,18 @@
+jest.mock('react-dnd', () => ({
+    useDrop: () => [{isOver: false, canDrop: false}, jest.fn()],
+    useDrag: () => [{isDragging: false}, jest.fn()],
+}));
+
 import React from "react";
 import {shallow} from "enzyme";
 import {testStore} from "../../../../Utils";
 import FilesView from "./FilesView";
 import toJson from "enzyme-to-json";
-import {wrapInTestContext} from "react-dnd-test-utils";
 import {TEST_REDUX_PROPS} from "../../../utils/testData";
-import {PROP_CONTAINER_ID} from "../../../utils/RclonePropTypes";
 
 const setUp = (intialState = {}, props = {}) => {
     const store = testStore(intialState);
-    const MyFiles = wrapInTestContext(FilesView);
-    const component = shallow(<MyFiles {...props} store={store}/>);
+    const component = shallow(<FilesView {...props} store={store}/>);
     return component.childAt(0).dive();
 };
 
@@ -25,7 +27,7 @@ describe("Files View", function () {
             };
 
             const props = {
-                containerID: PROP_CONTAINER_ID,
+                containerID: '0',
             };
             wrapper = setUp(initialState, props)
         });

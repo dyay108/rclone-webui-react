@@ -1,3 +1,7 @@
+jest.mock('../../../utils/withRouter', () => ({
+    withRouter: (Component) => Component,
+}));
+
 import React from "react";
 import {shallow} from "enzyme";
 import {findByTestAttr, testStore} from "../../../../Utils";

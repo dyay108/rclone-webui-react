@@ -16,6 +16,7 @@ import {toast} from "react-toastify";
 import * as PropTypes from 'prop-types';
 import {getProviders} from "../../../actions/configActions";
 import {connect} from "react-redux";
+import {withRouter} from "../../../utils/withRouter";
 import {NEW_DRIVE_CONFIG_REFRESH_TIMEOUT} from "../../../utils/Constants";
 import ErrorBoundary from "../../../ErrorHandling/ErrorBoundary";
 import urls from "../../../utils/API/endpoint";
@@ -716,9 +717,9 @@ class NewDrive extends React.Component {
                                     </Col>
                                 </FormGroup>
                                 <div className="clearfix">
-                                    <div className="float-right">
+                                    <div className="float-end">
 
-                                        <Button className="ml-3 btn-blue" onClick={this.gotoNextStep}>Next</Button>
+                                        <Button className="ms-3 btn-blue" onClick={this.gotoNextStep}>Next</Button>
 
                                     </div>
                                 </div>
@@ -738,13 +739,13 @@ class NewDrive extends React.Component {
                                                  currentValues={this.state.formValues} config={providers}/>
 
                                 <div className="clearfix">
-                                    <div className="float-right">
+                                    <div className="float-end">
                                         <Input type="checkbox" value={advancedOptions}
-                                               onChange={this.editAdvancedOptions}/><span className="mr-3">Edit Advanced Options</span>
+                                               onChange={this.editAdvancedOptions}/><span className="me-3">Edit Advanced Options</span>
                                         <Button className="btn-no-background" onClick={this.gotoPrevStep}>Go
                                             back</Button>
 
-                                        <Button className="ml-3 btn-blue" onClick={this.gotoNextStep}>Next</Button>
+                                        <Button className="ms-3 btn-blue" onClick={this.gotoNextStep}>Next</Button>
 
                                     </div>
                                 </div>
@@ -772,13 +773,13 @@ class NewDrive extends React.Component {
                                                  currentValues={this.state.formValues} config={providers}/>
 
                                 <div className="clearfix">
-                                    <div className="float-right">
+                                    <div className="float-end">
                                         <Input type="checkbox" value={advancedOptions}
-                                               onChange={this.editAdvancedOptions}/><span className="mr-3">Edit Advanced Options</span>
+                                               onChange={this.editAdvancedOptions}/><span className="me-3">Edit Advanced Options</span>
                                         <Button className="btn-no-background" onClick={this.gotoPrevStep}>Go
                                             back</Button>
 
-                                        <Button className="ml-3 btn-blue" onClick={this.gotoNextStep}>Next</Button>
+                                        <Button className="ms-3 btn-blue" onClick={this.gotoNextStep}>Next</Button>
                                     </div>
                                 </div>
                             </CardBody>
@@ -789,7 +790,7 @@ class NewDrive extends React.Component {
                     {/* <div className="clearfix" ref={(el) => {
                             this.configEndDiv = el
                         }}>
-                            <div className="float-right mb-3">
+                            <div className="float-end mb-3">
                                 <Button color="info" type="reset" onClick={() => this.clearForm()}>Clear</Button>
                                 <Button color="success" type="submit">Create Config</Button>
 
@@ -819,4 +820,4 @@ NewDrive.defaultProps = {
     isEdit: false,
 };
 
-export default connect(mapStateToProps, {getProviders})(NewDrive);
+export default withRouter(connect(mapStateToProps, {getProviders})(NewDrive));

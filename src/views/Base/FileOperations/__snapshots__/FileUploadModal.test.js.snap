@@ -6,10 +6,8 @@ exports[`File upload Modal renders should match snapshot 1`] = `
 >
   <Button
     className="btn-explorer-action h-100"
-    color="secondary"
     id="UploadButton"
     onClick={[Function]}
-    tag="button"
   >
     <i
       className="fa fa-lg fa-upload"
@@ -50,82 +48,34 @@ exports[`File upload Modal renders should match snapshot 1`] = `
     unmountOnClose={true}
     zIndex={1050}
   >
-    <DndProvider
+    <Memo(DndProvider)
       backend={[Function]}
     >
       <ModalHeader
-        charCode={215}
-        closeAriaLabel="Close"
-        tag="h5"
         toggle={[Function]}
-        wrapTag="div"
       >
         New Mount
       </ModalHeader>
-      <ModalBody
-        tag="div"
-      >
+      <ModalBody>
         <Container
           fluid={true}
-          tag="div"
         >
           <FileUploadBox
             onDrop={[Function]}
           >
             <Row
               className="upload-box"
-              tag="div"
-              widths={
-                Array [
-                  "xs",
-                  "sm",
-                  "md",
-                  "lg",
-                  "xl",
-                ]
-              }
             >
               <Col
                 sm={3}
-                tag="div"
-                widths={
-                  Array [
-                    "xs",
-                    "sm",
-                    "md",
-                    "lg",
-                    "xl",
-                  ]
-                }
               />
               <Col
                 sm={6}
-                tag="div"
-                widths={
-                  Array [
-                    "xs",
-                    "sm",
-                    "md",
-                    "lg",
-                    "xl",
-                  ]
-                }
               >
                 <label
                   htmlFor="upload-file"
                 >
-                  <Row
-                    tag="div"
-                    widths={
-                      Array [
-                        "xs",
-                        "sm",
-                        "md",
-                        "lg",
-                        "xl",
-                      ]
-                    }
-                  >
+                  <Row>
                     <i
                       className="fa fa-lg fa-plus mx-auto mt-5"
                     />
@@ -139,34 +89,12 @@ exports[`File upload Modal renders should match snapshot 1`] = `
               </Col>
               <Col
                 sm={3}
-                tag="div"
-                widths={
-                  Array [
-                    "xs",
-                    "sm",
-                    "md",
-                    "lg",
-                    "xl",
-                  ]
-                }
               />
             </Row>
-            <Row
-              tag="div"
-              widths={
-                Array [
-                  "xs",
-                  "sm",
-                  "md",
-                  "lg",
-                  "xl",
-                ]
-              }
-            >
+            <Row>
               <FormGroup
-                className="pl-2 pr-2 d-none"
+                className="ps-2 pe-2 d-none"
                 row={true}
-                tag="div"
               >
                 <Input
                   id="upload-file"
@@ -180,15 +108,12 @@ exports[`File upload Modal renders should match snapshot 1`] = `
           </FileUploadBox>
         </Container>
       </ModalBody>
-      <ModalFooter
-        tag="div"
-      >
+      <ModalFooter>
         <Button
           color="primary"
           data-test="ok-button"
           disabled={true}
           onClick={[Function]}
-          tag="button"
         >
           Upload
         </Button>
@@ -197,12 +122,11 @@ exports[`File upload Modal renders should match snapshot 1`] = `
           color="secondary"
           data-test="cancel-button"
           onClick={[Function]}
-          tag="button"
         >
           Cancel
         </Button>
       </ModalFooter>
-    </DndProvider>
+    </Memo(DndProvider)>
   </Modal>
 </div>
 `;

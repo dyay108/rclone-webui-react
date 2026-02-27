@@ -18,10 +18,7 @@ exports[`Image Loader renders Loader should match snapshot 1`] = `
   data-test="toggleModal"
   onClick={[Function]}
 >
-  <Spinner
-    tag="div"
-    type="border"
-  >
+  <Spinner>
     Loading...
   </Spinner>
 </div>

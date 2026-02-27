@@ -9,13 +9,13 @@ import {
 	Form,
 	Input,
 	InputGroup,
-	InputGroupAddon,
 	InputGroupText,
 	Row,
 	UncontrolledAlert
 } from 'reactstrap';
 import {connect} from "react-redux";
 import {changeAuthKey, changeIPAddress, changeUserNamePassword, signOut} from "../../../actions/userActions";
+import {withRouter} from "../../../utils/withRouter";
 import axiosInstance from "../../../utils/API/API";
 import urls from "../../../utils/API/endpoint";
 import logo from '../../../assets/img/brand/logo_symbol.png';
@@ -183,32 +183,26 @@ class Login extends Component {
 											<p className="text-muted">Sign In to your account</p>
 											{error && <UncontrolledAlert color="danger" children={error}/>}
 											<InputGroup className="mb-3">
-												<InputGroupAddon addonType="prepend">
 													<InputGroupText>
 														<i className="icon-user"/>
 													</InputGroupText>
-												</InputGroupAddon>
 												<Input type="text" placeholder="IP Address / URL"
 													   autoComplete="ipAddress"
 													   onChange={this.changeIPAddress} value={ipAddress}
 													   data-testid="LoginForm-ipAddress"/>
                                             </InputGroup>
                                             <InputGroup className="mb-3">
-                                                <InputGroupAddon addonType="prepend">
                                                     <InputGroupText>
 														<i className="icon-user"/>
                                                     </InputGroupText>
-                                                </InputGroupAddon>
                                                 <Input type="text" placeholder="Username" autoComplete="username"
                                                        data-testid="LoginForm-userName"
                                                        onChange={this.changeUserName} value={username}/>
                                             </InputGroup>
                                             <InputGroup className="mb-4">
-                                                <InputGroupAddon addonType="prepend">
                                                     <InputGroupText>
 														<i className="icon-lock"/>
                                                     </InputGroupText>
-                                                </InputGroupAddon>
                                                 <Input type="password" placeholder="Password"
                                                        data-testid="LoginForm-password"
                                                        autoComplete="current-password" onChange={this.changePassword}
@@ -223,7 +217,7 @@ class Login extends Component {
                                         </Form>
                                     </CardBody>
                                 </Card>
-                                <Card className="text-white bg-white py-5 d-md-down-none" style={{width: '44%'}}>
+                                <Card className="text-white bg-white py-5 d-none d-md-block" style={{width: '44%'}}>
                                     <CardBody className="text-center">
 										<img src={logo} alt="RClone logo"/>
                                     </CardBody>
@@ -238,4 +232,4 @@ class Login extends Component {
 }
 
 
-export default connect(null, {signOut, changeUserNamePassword, changeIPAddress, changeAuthKey})(Login);
+export default withRouter(connect(null, {signOut, changeUserNamePassword, changeIPAddress, changeAuthKey})(Login));

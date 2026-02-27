@@ -2,7 +2,7 @@
 
 exports[`File Operations renders should match snapshot 1`] = `
 <div
-  className="pl-0 mt-3 mb-1 d-flex justify-content-between align-items-center"
+  className="ps-0 mt-3 mb-1 d-flex justify-content-between align-items-center"
   style={
     Object {
       "marginLeft": "-15px",
@@ -14,31 +14,27 @@ exports[`File Operations renders should match snapshot 1`] = `
     className="d-flex flex-nowrap"
   >
     <Button
-      className="mr-1 btn-explorer-action"
+      className="me-1 btn-explorer-action"
       color="light"
       onClick={[Function]}
-      tag="button"
     >
       <i
         className="fa fa-lg fa-arrow-left"
       />
     </Button>
     <Button
-      className="mr-1 btn-explorer-action"
+      className="me-1 btn-explorer-action"
       color="light"
       onClick={[Function]}
-      tag="button"
     >
       <i
         className="fa fa-lg fa-arrow-right"
       />
     </Button>
     <Button
-      className="mr-1 btn-explorer-action"
-      color="secondary"
+      className="me-1 btn-explorer-action"
       id="RefreshButton"
       onClick={[Function]}
-      tag="button"
     >
       <i
         className="fa fa-lg fa-repeat"
@@ -52,13 +48,11 @@ exports[`File Operations renders should match snapshot 1`] = `
     </UncontrolledTooltip>
   </div>
   <div
-    className="flex-grow-1 pl-1 pr-1 pr-lg-3 pl-lg-3"
+    className="flex-grow-1 ps-1 pe-1 pr-lg-3 pl-lg-3"
   >
     <Form
       className="h-100"
-      inline={true}
       onSubmit={[Function]}
-      tag="form"
     >
       <Input
         onBlur={[Function]}
@@ -69,7 +63,6 @@ exports[`File Operations renders should match snapshot 1`] = `
             "width": "100%",
           }
         }
-        type="text"
         value="local:/"
       />
       <Button
@@ -80,7 +73,6 @@ exports[`File Operations renders should match snapshot 1`] = `
             "marginLeft": "-45px",
           }
         }
-        tag="button"
         type="submit"
       >
         <i
@@ -93,11 +85,9 @@ exports[`File Operations renders should match snapshot 1`] = `
     className="d-flex flex-wrap"
   >
     <Button
-      className="mr-1 btn-explorer-action p-1"
-      color="secondary"
+      className="me-1 btn-explorer-action p-1"
       id="CreateFolderButton"
       onClick={[Function]}
-      tag="button"
     >
       <img
         alt="New Folder"
@@ -127,15 +117,10 @@ exports[`File Operations renders should match snapshot 1`] = `
           className="fa fa-lg fa-filter"
         />
       </DropdownToggle>
-      <DropdownMenu
-        flip={true}
-        tag="div"
-      >
+      <DropdownMenu>
         <DropdownItem
           key="None"
           onClick={[Function]}
-          tag="button"
-          toggle={true}
           value=""
         >
           None
@@ -143,8 +128,6 @@ exports[`File Operations renders should match snapshot 1`] = `
         <DropdownItem
           key="Images"
           onClick={[Function]}
-          tag="button"
-          toggle={true}
           value="Images"
         >
           Images
@@ -152,8 +135,6 @@ exports[`File Operations renders should match snapshot 1`] = `
         <DropdownItem
           key="Pdf"
           onClick={[Function]}
-          tag="button"
-          toggle={true}
           value="Pdf"
         >
           Pdf
@@ -161,8 +142,6 @@ exports[`File Operations renders should match snapshot 1`] = `
         <DropdownItem
           key="Videos"
           onClick={[Function]}
-          tag="button"
-          toggle={true}
           value="Videos"
         >
           Videos
@@ -171,10 +150,8 @@ exports[`File Operations renders should match snapshot 1`] = `
     </ButtonDropdown>
     <Button
       className="btn-explorer-action"
-      color="secondary"
       id="ListViewButton"
       onClick={[Function]}
-      tag="button"
     >
       <i
         className="fa fa-lg fa-th-large"
@@ -188,10 +165,8 @@ exports[`File Operations renders should match snapshot 1`] = `
     </UncontrolledTooltip>
     <Button
       className="btn-explorer-action"
-      color="secondary"
       id="InfoButton"
       onClick={[Function]}
-      tag="button"
     >
       <i
         className="fa fa-lg fa-info"
@@ -213,18 +188,12 @@ exports[`File Operations renders should match snapshot 1`] = `
         }
       }
     />
-    <Form
-      inline={true}
-      tag="form"
-    >
-      <FormGroup
-        tag="div"
-      >
+    <Form>
+      <FormGroup>
         <Button
-          className="mr-1 btn-explorer-action"
+          className="me-1 btn-explorer-action"
           color=""
           onClick={[Function]}
-          tag="button"
         >
           <i
             className="fa fa-lg fa-search"
@@ -266,42 +235,14 @@ exports[`File Operations renders should match snapshot 1`] = `
       unmountOnClose={true}
       zIndex={1050}
     >
-      <ModalHeader
-        charCode={215}
-        closeAriaLabel="Close"
-        tag="h5"
-        wrapTag="div"
-      >
+      <ModalHeader>
         Status for 
         local
       </ModalHeader>
-      <ModalBody
-        tag="div"
-      >
-        <Row
-          tag="div"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
-        >
+      <ModalBody>
+        <Row>
           <Col
             sm={12}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
           >
             <div
               className="chart-wrapper"
@@ -311,44 +252,18 @@ exports[`File Operations renders should match snapshot 1`] = `
               </p>
               <Spinner
                 color="primary"
-                tag="div"
-                type="border"
-              >
-                Loading...
-              </Spinner>
+              />
               Loading
             </div>
           </Col>
         </Row>
-        <Row
-          tag="div"
-          widths={
-            Array [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl",
-            ]
-          }
-        >
+        <Row>
           <Col
             sm={12}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
           >
             <Button
               color="danger"
               onClick={[Function]}
-              tag="button"
             >
               Clean Trash 
               <i
@@ -358,9 +273,7 @@ exports[`File Operations renders should match snapshot 1`] = `
           </Col>
         </Row>
       </ModalBody>
-      <ModalFooter
-        tag="div"
-      />
+      <ModalFooter />
     </Modal>
   </div>
 </div>

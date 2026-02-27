@@ -4,28 +4,35 @@ import {bytesToKB, formatBytes, groupByKey, secondsToStr} from "../../../utils/T
 import * as PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {Line} from "react-chartjs-2";
-import {CustomTooltips} from "@coreui/coreui-plugin-chartjs-custom-tooltips";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+} from 'chart.js';
 import axiosInstance from "../../../utils/API/API";
 import urls from "../../../utils/API/endpoint";
 import {toast} from "react-toastify";
 
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
 const options = {
-    tooltips: {
-        enabled: false,
-        custom: CustomTooltips
-    },
     maintainAspectRatio: false,
     scales: {
-        yAxes: [{
+        y: {
             ticks: {
                 beginAtZero: true
             }
-        }],
-        xAxes: [{
+        },
+        x: {
             ticks: {
                 display: false
             }
-        }]
+        }
     }
 };
 function JobCard({job}) {

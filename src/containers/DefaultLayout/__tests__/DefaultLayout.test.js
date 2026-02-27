@@ -1,5 +1,5 @@
 import React from 'react';
-import {MemoryRouter, Route} from 'react-router-dom';
+import {MemoryRouter} from 'react-router-dom';
 import DefaultLayout from '../DefaultLayout';
 import {shallow} from "enzyme";
 import {Provider} from "react-redux";
@@ -8,7 +8,7 @@ import {testStore} from "../../../../Utils";
 const setUp = (props = {}) => {
     const component = shallow(
         <Provider store={testStore()}>
-            <MemoryRouter><Route path="/" name="Home" component={DefaultLayout}/></MemoryRouter>
+            <MemoryRouter><DefaultLayout/></MemoryRouter>
         </Provider>
     );
     return component;
