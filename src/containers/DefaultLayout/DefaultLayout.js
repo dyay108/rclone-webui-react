@@ -1,19 +1,9 @@
 import React, {Component, Suspense} from 'react';
-import {Navigate, Route, Routes} from 'react-router-dom';
+import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import {withRouter} from '../../utils/withRouter';
 import {Container} from 'reactstrap';
 import {getVersion} from "../../actions/versionActions";
 
-import {
-    CBreadcrumb,
-    CFooter,
-    CHeader,
-    CSidebar,
-    CSidebarFooter,
-    CSidebarNav,
-    CSidebarNavItem,
-    CSidebarMinimizer,
-} from '@coreui/react';
 // sidebar nav config
 import navigation from '../../_nav';
 // routes config
@@ -22,17 +12,11 @@ import {connect} from "react-redux";
 import {AUTH_KEY, LOGIN_TOKEN} from "../../utils/Constants";
 import ErrorBoundary from "../../ErrorHandling/ErrorBoundary";
 
-// const DefaultAside = React.lazy(() => import('./DefaultAside'));
 const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
-const VERSION_NAV_ITEM_ATTRS = {
-    className: 'mt-auto',
-    fontIcon: 'fa fa-cog',
-    to: 'https://rclone.org/changelog',
-    target: '_blank',
-    color: 'success'
-}
+const SIDEBAR_WIDTH = 200;
+const HEADER_HEIGHT = 55;
 
 class DefaultLayout extends Component {
 
@@ -43,7 +27,9 @@ class DefaultLayout extends Component {
             ...navigation.items,
             {
                 name: this.props.version.version,
-                ...VERSION_NAV_ITEM_ATTRS
+                url: 'https://rclone.org/changelog',
+                icon: 'fa fa-cog',
+                target: '_blank',
             }
         ];
     }
@@ -58,59 +44,75 @@ class DefaultLayout extends Component {
 
     render() {
         return (
-            <div className="app" data-test="defaultLayout">
+            <div data-test="defaultLayout">
                 <ErrorBoundary>
-                    <CHeader fixed>
+                    {/* Fixed top header */}
+                    <header
+                        className="navbar bg-dark fixed-top px-3"
+                        style={{height: HEADER_HEIGHT, zIndex: 1030}}
+                    >
                         <Suspense fallback={this.loading()}>
-                            <DefaultHeader onLogout={e => this.signOut(e)}/>
+                            <DefaultHeader/>
                         </Suspense>
-                    </CHeader>
-                    <div className="app-body">
-                        <CSidebar fixed breakpoint="lg">
-                            <CSidebarNav>
-                                <Suspense fallback={this.loading()}>
-                                    {this.navItems.map((item, idx) => (
-                                        <CSidebarNavItem
-                                            key={idx}
-                                            name={item.name}
-                                            to={item.to || item.url}
-                                            fontIcon={item.fontIcon || item.icon}
+                    </header>
+
+                    <div className="d-flex" style={{marginTop: HEADER_HEIGHT}}>
+                        {/* Fixed sidebar */}
+                        <nav
+                            className="bg-dark flex-shrink-0 overflow-auto"
+                            style={{
+                                width: SIDEBAR_WIDTH,
+                                minHeight: `calc(100vh - ${HEADER_HEIGHT}px)`,
+                                position: 'sticky',
+                                top: HEADER_HEIGHT,
+                                alignSelf: 'flex-start',
+                            }}
+                        >
+                            <ul className="nav flex-column py-2">
+                                {this.navItems.map((item, idx) => (
+                                    <li className="nav-item" key={idx}>
+                                        <NavLink
+                                            to={item.url}
                                             target={item.target}
-                                            className={item.className || item.class}
-                                            color={item.color}
-                                        />
-                                    ))}
-                                </Suspense>
-                            </CSidebarNav>
-                            <CSidebarFooter/>
-                            <CSidebarMinimizer/>
-                        </CSidebar>
-                        <main className="main">
-                            <CBreadcrumb appRoutes={routes}/>
-                            <Container fluid>
+                                            className={({isActive}) =>
+                                                'nav-link text-white' + (isActive ? ' active fw-bold' : '')
+                                            }
+                                        >
+                                            {item.icon && <i className={`${item.icon} me-2`}/>}
+                                            {item.name}
+                                        </NavLink>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+
+                        {/* Main content */}
+                        <main className="flex-grow-1" style={{minWidth: 0}}>
+                            <Container fluid className="pt-3">
                                 <Suspense fallback={this.loading()}>
                                     <Routes>
-                                        {
-                                            routes.map((route, idx) => {
-                                                return route.component ? (
-                                                    <Route
-                                                        key={idx}
-                                                        path={route.path}
-                                                        element={<route.component />}/>
-                                                ) : (null);
-                                            })
-                                        }
+                                        {routes.map((route, idx) =>
+                                            route.component ? (
+                                                <Route
+                                                    key={idx}
+                                                    path={route.path}
+                                                    element={<route.component/>}
+                                                />
+                                            ) : null
+                                        )}
                                         <Route path="/" element={<Navigate to="/dashboard" replace/>}/>
                                     </Routes>
                                 </Suspense>
                             </Container>
                         </main>
                     </div>
-                    <CFooter>
+
+                    {/* Footer */}
+                    <footer className="py-2 px-3 border-top bg-white">
                         <Suspense fallback={this.loading()}>
                             <DefaultFooter/>
                         </Suspense>
-                    </CFooter>
+                    </footer>
                 </ErrorBoundary>
             </div>
         );
@@ -122,4 +124,4 @@ const mapStateToProps = (state) => ({
     version: state.version,
 });
 
-export default withRouter(connect(mapStateToProps, { getVersion })(DefaultLayout));
+export default withRouter(connect(mapStateToProps, {getVersion})(DefaultLayout));

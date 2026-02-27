@@ -1,8 +1,6 @@
 // If you want to override variables do it here
 @import "variables";
-// Import styles
+// Import Bootstrap 5 via @coreui/coreui v4 (superset of Bootstrap 5)
 @import "~@coreui/coreui/scss/coreui";
 // If you want to add something do it here
 @import "custom";
-// ie fixes
-@import "ie-fix";

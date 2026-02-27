@@ -44,7 +44,7 @@ function FileComponent({
 }) {
     const {IsDir, MimeType, ModTime, Name, Size} = item;
 
-    const [{ isDragging }, drag] = useDrag({
+    const [, drag] = useDrag({
         type: ItemTypes.FILECOMPONENT,
         item: () => ({
             Name,

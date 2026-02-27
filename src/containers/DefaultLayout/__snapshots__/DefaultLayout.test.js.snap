@@ -2,14 +2,17 @@
 
 exports[`Remote Explorer renders should match snapshot 1`] = `
 <div
-  className="app"
   data-test="defaultLayout"
 >
   <ErrorBoundary>
-    <CHeader
-      colorScheme="light"
-      fixed={true}
-      tag="header"
+    <header
+      className="navbar bg-dark fixed-top px-3"
+      style={
+        Object {
+          "height": 55,
+          "zIndex": 1030,
+        }
+      }
     >
       <Suspense
         fallback={
@@ -20,209 +23,142 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
           </div>
         }
       >
-        <lazy
-          onLogout={[Function]}
-        />
+        <lazy />
       </Suspense>
-    </CHeader>
+    </header>
     <div
-      className="app-body"
+      className="d-flex"
+      style={
+        Object {
+          "marginTop": 55,
+        }
+      }
     >
-      <CSidebar
-        breakpoint="lg"
-        colorScheme="dark"
-        fixed={true}
-        hideOnMobileClick={true}
-        show="responsive"
+      <nav
+        className="bg-dark flex-shrink-0 overflow-auto"
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "minHeight": "calc(100vh - 55px)",
+            "position": "sticky",
+            "top": 55,
+            "width": 200,
+          }
+        }
       >
-        <CSidebarNav>
-          <Suspense
-            fallback={
-              <div
-                className="animated fadeIn pt-1 text-center"
-              >
-                Loading...
-              </div>
-            }
+        <ul
+          className="nav flex-column py-2"
+        >
+          <li
+            className="nav-item"
+            key="0"
           >
-            <CSidebarNavItem
-              fontIcon="icon-speedometer"
-              key="0"
-              name="Dashboard"
+            <NavLink
+              className={[Function]}
               to="/dashboard"
-            />
-            <CSidebarNavItem
-              fontIcon="icon-note"
-              key="1"
-              name="Configs"
+            >
+              <i
+                className="icon-speedometer me-2"
+              />
+              Dashboard
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+            key="1"
+          >
+            <NavLink
+              className={[Function]}
               to="/showconfig"
-            />
-            <CSidebarNavItem
-              fontIcon="icon-screen-desktop"
-              key="2"
-              name="Explorer"
+            >
+              <i
+                className="icon-note me-2"
+              />
+              Configs
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+            key="2"
+          >
+            <NavLink
+              className={[Function]}
               to="/remoteExplorer"
-            />
-            <CSidebarNavItem
-              fontIcon="icon-star"
-              key="3"
-              name="Backend"
+            >
+              <i
+                className="icon-screen-desktop me-2"
+              />
+              Explorer
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+            key="3"
+          >
+            <NavLink
+              className={[Function]}
               to="/rcloneBackend"
-            />
-            <CSidebarNavItem
-              fontIcon="fa fa-hdd-o"
-              key="4"
-              name="Mounts"
+            >
+              <i
+                className="icon-star me-2"
+              />
+              Backend
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+            key="4"
+          >
+            <NavLink
+              className={[Function]}
               to="/mountDashboard"
-            />
-            <CSidebarNavItem
-              fontIcon="icon-logout"
-              key="5"
-              name="Log Out"
+            >
+              <i
+                className="fa fa-hdd-o me-2"
+              />
+              Mounts
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+            key="5"
+          >
+            <NavLink
+              className={[Function]}
               to="/login"
-            />
-            <CSidebarNavItem
-              className="mt-auto"
-              color="success"
-              fontIcon="fa fa-cog"
-              key="6"
-              name=""
+            >
+              <i
+                className="icon-logout me-2"
+              />
+              Log Out
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+            key="6"
+          >
+            <NavLink
+              className={[Function]}
               target="_blank"
               to="https://rclone.org/changelog"
-            />
-          </Suspense>
-        </CSidebarNav>
-        <CSidebarFooter
-          tag="div"
-        />
-        <CSidebarMinimizer />
-      </CSidebar>
+            >
+              <i
+                className="fa fa-cog me-2"
+              />
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
       <main
-        className="main"
-      >
-        <CBreadcrumb
-          appRoutes={
-            Array [
-              Object {
-                "exact": true,
-                "name": "Home",
-                "path": "/",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "name": "Edit Remote",
-                "path": "/newdrive/edit/:drivePrefix",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "exact": true,
-                "name": "New Remote",
-                "path": "/newdrive",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "exact": true,
-                "name": "Login Page",
-                "path": "/login",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "name": "Dashboard",
-                "path": "/dashboard",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "name": "Configs",
-                "path": "/showconfig",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "exact": true,
-                "name": "Explorer",
-                "path": "/remoteExplorer/:remoteName/:remotePath",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "name": "Explorer",
-                "path": "/remoteExplorer",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "name": "Rclone Backend",
-                "path": "/rcloneBackend",
-              },
-              Object {
-                "component": Object {
-                  "$$typeof": Symbol(react.lazy),
-                  "_init": [Function],
-                  "_payload": Object {
-                    "_result": [Function],
-                    "_status": -1,
-                  },
-                },
-                "name": "Mount Dashboard",
-                "path": "/mountDashboard",
-              },
-            ]
+        className="flex-grow-1"
+        style={
+          Object {
+            "minWidth": 0,
           }
-        />
+        }
+      >
         <Container
+          className="pt-3"
           fluid={true}
         >
           <Suspense
@@ -294,9 +230,8 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
         </Container>
       </main>
     </div>
-    <CFooter
-      fixed={false}
-      tag="footer"
+    <footer
+      className="py-2 px-3 border-top bg-white"
     >
       <Suspense
         fallback={
@@ -309,7 +244,7 @@ exports[`Remote Explorer renders should match snapshot 1`] = `
       >
         <lazy />
       </Suspense>
-    </CFooter>
+    </footer>
   </ErrorBoundary>
 </div>
 `;
